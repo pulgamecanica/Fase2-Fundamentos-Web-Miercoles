@@ -12,6 +12,8 @@
 <% @urls_total.each_with_index do |x, index|%>
 <br>
 <p><%="*"*150%></p>
-<p><%=index+1%>.-The short link is:<a href=<%x.original%>><%= x.short%></a>...............................You have visited this site <%= x.visits%> times</p>
+<p><%=index+1%>.-The short link is:<a href=" <%= x.original %> "> <%= x.short %> </a>...............................You have visited this site <%= x.visits%> times</p>
 <%end%>
 <%end%>
+
+

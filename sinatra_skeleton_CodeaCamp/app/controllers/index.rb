@@ -7,12 +7,10 @@ end
 
 
 get '/:urls' do
-  # redirige a la URL original
-  url_input = params[:urls]
-  url = Url.find_by short: url_input 
-  visits = url.visits +=1
+ puts url_input = params[:urls]
+  the_url = Url.find_by(original: url_input) 
+  visits = the_url.visits +=1
   visits.save
-  redirect_to url.original
 end
 
 post '/urls' do

@@ -5,7 +5,7 @@ $(document).ready(function() {
 	// de HTML este exista ya en la página. 
   $("h4").on("click", function(){
     event.preventDefault();
-    alert("The paragraph was clicked.");
+    alert("Click");
 });
 });
 
