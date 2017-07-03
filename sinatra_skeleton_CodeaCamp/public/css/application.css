@@ -1,8 +1,8 @@
 .container {
   margin: 40px auto;
-  width: 800px;
-  padding: 0px 40px 40px 40px;
-  border: 100px dotted purple;
+  width: 1000px;
+  padding: 0px 100px 100px 100px;
+  border: 20px dotted purple;
   background-color: aqua;
 }
 th {

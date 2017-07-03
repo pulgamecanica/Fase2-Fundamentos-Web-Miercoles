@@ -7,17 +7,6 @@ $(document).ready(function() {
     event.preventDefault();
     alert("The paragraph was clicked.");
 });
-
-
-//    $('#forma').on("submit", function(event){
-//     var url = '/urls';
-//     var data_to_compare = $( this ).serialize();
-//     $.post(url,data_to_compare, function( callback ) 
-//       console.log( callback );
-//     $( "p" ).html( callback );
-  
-// });    
-// });
 });
 
 
