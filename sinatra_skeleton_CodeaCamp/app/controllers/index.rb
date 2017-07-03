@@ -1,16 +1,17 @@
 get '/' do
   # La siguiente linea hace render de la vista 
   # que esta en app/views/index.erb
-  @urls_total = Url.all
+  @urls_total = Url.all.order('visits DESC')
   erb :index
 end
 
 
 get '/:urls' do
- puts url_input = params[:urls]
-  the_url = Url.find_by(original: url_input) 
-  visits = the_url.visits +=1
-  visits.save
+  url_input = params[:urls]
+  url = Url.find_by(id: url_input) 
+  visitas = url.visits +=1
+  url.save
+  redirect to url.original
 end
 
 post '/urls' do
