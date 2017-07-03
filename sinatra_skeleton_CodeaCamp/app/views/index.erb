@@ -1,6 +1,5 @@
 <br>
-<%= @urls%>
-
+<h1>Welcome to the codeacamp bitly</h1>
 <div id='parraf'>
   <form id="forma" action="/urls" method="post" name="formName">
     <h4>Introduce your URL</h4>
@@ -9,3 +8,9 @@
     <input id="boton" type="submit" value="Shorten it!">
 </div>
   </form>
+<% if @urls_total%>
+<% @urls_total.each do |x|%>
+<p>The short link is:<%= x.short%></p>
+<p>you have visited this site <%= x.visits%> times</p>
+<%end%>
+<%end%>
