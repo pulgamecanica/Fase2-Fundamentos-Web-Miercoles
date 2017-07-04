@@ -10,9 +10,9 @@ class User < ActiveRecord::Base
     # de otra manera regresa nil
     user_confirm = User.find_by(email: email)
     if user_confirm.password == password
-      'correct'
+      return true
     else
-      'error'
+      return false 
     end
   end
 end

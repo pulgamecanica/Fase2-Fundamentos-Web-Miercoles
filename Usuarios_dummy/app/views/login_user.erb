@@ -2,12 +2,12 @@
     <p><center>
       Date
       <!--mostrar sesion con tiempo actual-->
-      <%=session[:time] if session[:time] != nil %>
     </center></p>
     <!-- mostrar nombre -->
-    <p>Hello <%=@name, @id%>  </p>
+    <p>Hello <%= @user.name%>  </p>
     <br>
     <!-- mostrar id -->
     <p>Now you can be my student</p>
-        <a href'LogOut'>LogOut</a>s
+      <a href='/logout'>Close
+      </a>
     
