@@ -1,0 +1,13 @@
+<h1> This is the hidden page</h1 >
+    <p><center>
+      Date
+      <!--mostrar sesion con tiempo actual-->
+      <%=session[:time] if session[:time] != nil %>
+    </center></p>
+    <!-- mostrar nombre -->
+    <p>Hello <%=@name, @id%>  </p>
+    <br>
+    <!-- mostrar id -->
+    <p>Now you can be my student</p>
+        <a href'LogOut'>LogOut</a>s
+    

@@ -1,14 +1,21 @@
+require 'valid_email'
 class User < ActiveRecord::Base
     # ej. User.authenticate('fernando@codea.mx', 'qwerty')
   validates :name, presence: true
   validates :password, presence: true
-  validates :email, presence: true
-  validates :email, format: { with: /(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?/, message: "formato de URL incorrecto" }
+  validates :email, :presence => true, :email => true
   
   def self.authenticate(email, password)
-
     # si el email y el password corresponden a un usuario valido, regresa el usuario
     # de otra manera regresa nil
+    user_confirm = User.find_by(email: email)
+    if user_confirm.password == password
+      'correct'
+    else
+      'error'
+    end
   end
-
 end
+
+
+
