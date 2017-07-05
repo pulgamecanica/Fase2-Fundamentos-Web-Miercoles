@@ -1,19 +1,1 @@
 <br>
-<h1>Welcome to the codeacamp bitly</h1>
-<div id='parraf'>
-  <form id="forma" action="/urls" method="post" name="formName">
-    <h4>Introduce your URL</h4>
-    <br>
-    <input id="text_id" type="text" name="user_input" value="paste your URL!">
-    <input id="boton" type="submit" value="Shorten it!">
-</div>
-  </form>
-<% if @urls_total%>
-<% @urls_total.each_with_index do |x, index|%>
-<br>
-<p><%="*"*150%></p>
-<p><%=index+1%>.-The short link is:<a target="_blank" href=" <%= x.id %> "> <%= x.short %> </a>...............................You have visited this site <%= x.visits%> times</p>
-<%end%>
-<%end%>
-
-

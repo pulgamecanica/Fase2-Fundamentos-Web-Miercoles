@@ -8,18 +8,3 @@
 th {
   text-align: left;
 }
-#text_id
-{
-  margin: 40px auto;
-  width: 600px;
-  padding: 0px 10px 10px 10px;
-  border: 10px dotted pink;
-  background-color: yellow;
-}
-#boton{
-  margin: 40px auto;
-  width: 150px;
-  padding: 0px 10px 10px 10px;
-  border: 10px dotted green;
-  background-color: red;
-}
