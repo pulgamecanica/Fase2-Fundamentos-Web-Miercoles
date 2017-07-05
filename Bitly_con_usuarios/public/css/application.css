@@ -31,3 +31,17 @@ th {
   background-color: aquamarine;
   background-size: 400px;
 }
+#forma_url{
+   margin: 40px auto;
+  width: 600px;
+  padding: 0px 10px 10px 10px;
+  border: 10px dotted pink;
+  background-color: yellow;
+}
+.user_background {
+  background-color: pink;
+}
+.user_background_1 {
+  background-image: url("http://www.hobbyconsolas.com/sites/hobbyconsolas.com/public/media/image/2015/05/477998-tloz-spirit-tracks-como-completar-juego.jpg") ;
+  background-size: cover;
+}

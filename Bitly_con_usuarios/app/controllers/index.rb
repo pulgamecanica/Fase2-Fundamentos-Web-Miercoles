@@ -1,5 +1,5 @@
 before '/login' do
-  redirect '/' unless session[:id]
+ #redirect '/' unless session[:id]
 end
 
 get '/' do
@@ -28,6 +28,14 @@ get '/:urls' do
   redirect to url.original
 end
 
+get '/:user_urls' do
+  url_input = params[:urls]
+  url = Url.find_by(id: url_input) 
+  visitas = url.visits +=1
+  url.save
+  redirect to url.original
+end
+
 post '/users' do
   user_name = params[:user_name]
   user_email = params[:user_email]
@@ -44,9 +52,9 @@ end
 post '/login' do
   email = params[:email]
   password = params[:password]
-  user = User.find_by(email: email)
+  user_login = User.find_by(email: email)
   if User.authenticate(email, password)== true
-     session[:id] = user.id
+     session[:id] = user_login.id
      redirect "/login"
   else
      "Wrong email or password"
@@ -57,14 +65,26 @@ end
 
 post '/urls' do
   # crea una nueva Url
-  @url = params[:user_input]
-  new_URL = Url.create(original: @url, visits: 0)
+  url = params[:user_input]
+  new_URL = Url.create(original: url, visits: 0)
   if new_URL.save
     p session[:message] = "Saved"
     else
     p "Error"
   end
   redirect to '/'
+end
+
+post '/user_urls' do
+  # crea una nueva Url
+  user_url = params[:user_input]
+  new_URL = Url.create(user_id: session[:id], original: user_url, visits: 0)
+  if new_URL.save
+    p session[:message] = "Saved"
+    else
+    p "Error"
+  end
+  redirect to '/login'
 end
 
 
