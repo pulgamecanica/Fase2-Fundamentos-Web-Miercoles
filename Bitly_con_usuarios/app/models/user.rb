@@ -9,11 +9,14 @@ class User < ActiveRecord::Base
   def self.authenticate(email, password)
     # si el email y el password corresponden a un usuario valido, regresa el usuario
     # de otra manera regresa nil
-    user_confirm = User.find_by(email: email)
-    if user_confirm.password == password
-      return true
+    if user_confirm = User.find_by(email: email)
+      if user_confirm.password == password
+        return true
+      else
+        return false
+      end
     else
-      return false 
+      return false
     end
   end
 end

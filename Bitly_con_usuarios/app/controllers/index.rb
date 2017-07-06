@@ -56,8 +56,9 @@ post '/login' do
   if User.authenticate(email, password)== true
      session[:id] = user_login.id
      redirect "/login"
-  else
+  elsif User.authenticate(email, password)== false
      "Wrong email or password"
+  redirect "/"
   end
 end
 ###********************************************###
